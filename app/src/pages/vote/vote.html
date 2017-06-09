@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title || 'Wait for move'}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <swiper #playerSwiper [config]="swiperConfig">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let playerKey of playersKeys">
+        <div class="playerSlide">
+          <h2>{{players[playerKey].name}}</h2>
+          <img [src]="players[playerKey].avatar">
+          <p>Score: {{players[playerKey].score}}</p>
+        </div>
+      </div>
+    </div>
+  </swiper>
+
+  <ion-item *ngIf="stage !== 'wait'" text-center>
+    <h2>Your move!</h2>
+  </ion-item>
+
+  <div *ngIf="stage !== 'wait' && prevPlayer">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="prevPlayer.avatar">
+      </ion-thumbnail>
+      <h2>{{prevPlayer.name}}</h2>
+      <p>imagine digit for you</p>
+    </ion-item>
+
+    <ion-grid *ngIf="stage == 'answer'">
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button
+                  block
+                  color="primary"
+                  [outline]="answer != 1"
+                  (click)="ans(1)">
+            Even
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button
+                  block
+                  color="warning"
+                  [outline]="answer != 0"
+                  (click)="ans(0)">
+            Odd
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-item *ngIf="stage == 'question'">
+    <ion-label [color]="questionError ? 'danger' : 'primary'"
+               stacked>Your question</ion-label>
+    <ion-input type="number"
+               text-center
+               placeholder="Any number"
+               [(ngModel)]="question"></ion-input>
+  </ion-item>
+  <div padding *ngIf="stage == 'question'">
+    <button ion-button
+            block
+            (click)="vote()">Vote</button>
+  </div>
+
+  <!-- Waiting mode -->
+  <div *ngIf="stage == 'wait'" text-center>
+    <h1>
+      <ion-icon class="icon-spin" name="sync"
+                style="display: block"></ion-icon>
+    </h1>
+    <h2 style="display: block">Waiting other players</h2>
+  </div>
+
+</ion-content>
+

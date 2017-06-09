@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Even/Odd Games
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">
+      Active games
+    </ion-item-divider>
+    <button ion-item
+            *ngFor="let item of activeGameList | async"
+            (click)="join(item)">
+      <ion-thumbnail item-start>
+        <img [src]="item.icon">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <ion-badge item-end>{{item.playersReady || 0}} / {{item.playerCount}}</ion-badge>
+    </button>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">
+      Finished games
+    </ion-item-divider>
+    <button ion-item
+            *ngFor="let item of oldGameList | async"
+            (click)="join(item)">
+      <ion-thumbnail item-start>
+        <img [src]="item.icon">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <ion-badge item-end>{{item.playerCount}}</ion-badge>
+    </button>
+  </ion-item-group>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (click)="create()">Create game</button>
+  </ion-toolbar>
+</ion-footer>

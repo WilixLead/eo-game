@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create game
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label [color]="nameError ? 'danger' : 'primary'"
+                 stacked>You name (Game name)</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-list-header>
+      Player Count
+      <ion-badge item-end>{{playerCount}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range [(ngModel)]="playerCount" min="2" max="5">
+        <ion-label range-left>2</ion-label>
+        <ion-label range-right>5</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <div text-center padding>
+    <button ion-button block (click)="create()">Start game</button>
+  </div>
+</ion-content>

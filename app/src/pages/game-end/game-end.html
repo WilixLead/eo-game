@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Game finished!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div text-center *ngIf="winner">
+    <h3>Congratulations!</h3>
+    <h1>{{winner.name}}</h1>
+    <img [src]="winner.avatar">
+    <h2>Score: {{winner.score}}</h2>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let item of players">
+      <ion-thumbnail item-start>
+        <img [src]="item.avatar">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <p *ngIf="gameService.currentPlayerId === item.playerId">
+        It is you
+      </p>
+      <ion-badge item-end>{{item.score || 0}}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button
+            block
+            (click)="done()">Done</button>
+  </ion-toolbar>
+</ion-footer>
