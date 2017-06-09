@@ -1,9 +1,6 @@
 ## Event/Odd Game
 
-<img src="screenshots/game-list.png?raw=true" alt="Game List" width="300"/>
-<img src="screenshots/game-first-step.png?raw=true" alt="First step" width="300"/>
-<img src="screenshots/game-next-step.png?raw=true" alt="Next step" width="300"/>
-<img src="screenshots/game-end.png?raw=true" alt="Game end" width="300"/>
+<img src="screenshots/game-list.png?raw=true" alt="Game List" width="200"/><img src="screenshots/game-first-step.png?raw=true" alt="First step" width="200"/><img src="screenshots/game-next-step.png?raw=true" alt="Next step" width="200"/><img src="screenshots/game-end.png?raw=true" alt="Game end" width="200"/>
 
 ### Install and run client
 
