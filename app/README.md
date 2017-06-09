@@ -1,10 +1,5 @@
 ## Event/Odd Game App
 
-![Game List](screenshots/game-list.jpg?raw=true "Game List Page" width="40%")
-![Game First Step](screenshots/game-first-step.jpg?raw=true "Game First Step Page" width="40%")
-![Game Next Step](screenshots/game-next-step.jpg?raw=true "Game Next Step Page" width="40%")
-![Game End](screenshots/game-end.jpg?raw=true "Game End Page" width="40%")
-
 ### Install
 Make sure you have ionic and cordova installed
 

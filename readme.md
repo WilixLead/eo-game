@@ -1,5 +1,11 @@
 ## Event/Odd Game
 
+![Game List](screenshots/game-list.jpg?raw=true "Game List Page")
+![Game First Step](screenshots/game-first-step.jpg?raw=true "Game First Step Page")
+![Game Next Step](screenshots/game-next-step.jpg?raw=true "Game Next Step Page")
+![Game End](screenshots/game-end.jpg?raw=true "Game End Page")
+
+
 ### Install and run client
 
 ```bash
